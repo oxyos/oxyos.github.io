@@ -1,0 +1,57 @@
+name: Deploy Site to Github Pages
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-site:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      BUILD-DIRECTORY: "./build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the site from the repository
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      - name: Build site
+        run: |
+          # Run Flask-frozen to build the site
+          python3 main.py build
+          # Create a directory to put all the files into
+          mkdir "$BUILD_DIRECTORY"
+          # Copy all the directories over
+          cp -r about" what-we-do events resources static "$BUILD_DIRECTORY"
+          # Copy the auxillary files over
+          cp favicon.ico index.html qa.pdf robots.txt "$BUILD_DIRECTORY"
+
+      - name: Setup pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '$BUILD_DIRECTORY'
+
+      - name: Upload to Github pages
+        id: deployment
+        uses: actions/deploy-pages@v2
