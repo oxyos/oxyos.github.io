@@ -11,7 +11,7 @@ def homepage():
 @app.route('/about/')
 def aboutpage():
 
-    with open('src/app/members.json') as membersfile:
+    with open('app/members.json') as membersfile:
         members = json.load(membersfile)
 
     return render_template('pages/about.html', members=members, activePage='about') # activePage variable used to bold the link of the current page on the navbar
@@ -32,15 +32,15 @@ def resourcespage():
 
 @app.route('/robots.txt')
 def robotstxtpage():
-    return send_from_directory('static', filename='robots.txt')
+    return send_from_directory('static', path='robots.txt')
 
 @app.route('/favicon.ico')
 def faviconpage():
-    return send_from_directory('static', filename='favicon.ico')
+    return send_from_directory('static', path='favicon.ico')
 
 @app.route('/qa.pdf')
 def qapdfpage():
-    return send_from_directory('static', filename='qa.pdf')
+    return send_from_directory('static', path='qa.pdf')
 
 # Error handling
 
