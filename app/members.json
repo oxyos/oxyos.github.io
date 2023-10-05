@@ -1,50 +1,14 @@
 [
     {
-        "name": "Dyani Dillard",
-        "headshot": "/static/img/dyani_photo.jpg",
+        "name": "Nicholas Novak",
+        "headshot": "/static/img/placeholder.png",
         "title": "Co-President",
-        "ig_eboard": "https://www.instagram.com/p/CEpHN2EjKhM/"
+        "ig_eboard": ""
     },
     {
-        "name": "Joey Rose",
-        "headshot": "/static/img/joey_photo.jpg",
+        "name": "Alyanna McGrath",
+        "headshot": "/static/img/placeholder.png",
         "title": "Co-President",
-        "ig_eboard": "https://www.instagram.com/p/CE91yDcjLAk/"
-    },
-    {
-        "name": "Scott Morris",
-        "headshot": "/static/img/scott_photo.jpeg",
-        "title": "Head of Events",
-        "ig_eboard": "https://www.instagram.com/p/CFNRZfPDbmD/"
-    },
-    {
-        "name": "Kameron Mohebbi",
-        "headshot": "/static/img/kameron_photo.jpg",
-        "title": "Head of Marketing & Finance",
         "ig_eboard": ""
-    },
-    {
-        "name": "Kathy Liu",
-        "headshot": "/static/img/kathy_photo.jpg",
-        "title": "Co-Head of Projects",
-        "ig_eboard": ""
-    },
-    {
-        "name": "Joshua Pulido",
-        "headshot": "/static/img/joshua_photo.jpg",
-        "title": "Co-Head of Projects",
-        "ig_eboard": ""
-    },
-    {
-        "name": "Bryce Boyle",
-        "headshot": "/static/img/bryce_photo.jpg",
-        "title": "Co-Head of Community Engagement",
-        "ig_eboard": ""
-    },
-    {
-        "name": "Jasmine Reyes",
-        "headshot": "/static/img/jasmine_photo.jpg",
-        "title": "Co-Head of Community Engagement",
-        "ig_eboard": "https://www.instagram.com/oxyopensource/"
     }
 ]
